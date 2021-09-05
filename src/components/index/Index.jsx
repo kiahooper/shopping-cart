@@ -6,7 +6,7 @@ export const Index = () => {
     return (
         <div className="index">
             <div className="img-wrapper">
-                <img src="assets/images/heroIndex.jpg"></img>
+                <img src={`${process.env.PUBLIC_URL}/assets/images/heroIndex.jpg`}></img>
             </div>
             <div className="index-info">
                 <h2>Get Prepared</h2>
