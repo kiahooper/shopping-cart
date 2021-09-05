@@ -36,5 +36,5 @@ To open link below in new tab, please CTRL+click (on Windows and Linux) or CMD+c
 
 ## Credits
 
-- This project is inspired by [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app) (an free open source coding curriculum).
+- This project is inspired by [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart) (an free open source coding curriculum).
 - This site was built using [GitHub Pages](https://pages.github.com/).
