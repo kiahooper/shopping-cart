@@ -13,7 +13,7 @@ It is made fully mobile responsive using Flexbox.
 I implemented a weather widget, that suited the theme of the rainwear shop. This was a way to show the reusability of my previously built Weather App.
 
 ## How To View
-[Visit The Website](https://kiahooper.github.io/shopping-cart/)
+[Visit The Website](https://kiahooper.github.io/shopping-cart/){:target="_blank"}
 
 ## Features
 
