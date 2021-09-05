@@ -17,6 +17,8 @@ To open link below in new tab, please CTRL+click (on Windows and Linux) or CMD+c
 
 [Visit The Website](https://kiahooper.github.io/shopping-cart/)
 
+Please allow location services to view the weather widget.
+
 ## Features
 
 - Single page application
