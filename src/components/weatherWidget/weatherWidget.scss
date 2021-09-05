@@ -1,0 +1,72 @@
+@import "../../globalStyles/mixins";
+@import "../../globalStyles/variables";
+
+.weather {
+  @include mobile {
+    display: none;
+  }
+  position: relative;
+  width: 200px;
+  height: 30px;
+  box-sizing: border-box;
+  color: white;
+  margin: 0 20px;
+  border-left: 1px solid $accentColor;
+  overflow: hidden;
+
+  .loading {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    height: 100%;
+    @include flexBox(center, center);
+
+    span {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    &.not-active {
+      animation: hideLeft 1s ease forwards;
+    }
+  }
+
+  .info {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    transform: translateX(-150%);
+    @include flexBox(center, center);
+
+    img {
+      max-width: 25px;
+    }
+
+    span {
+      margin: 0 10px;
+      font-size: 1.1rem;
+    }
+
+    &.active {
+      animation: reveal 1s ease forwards 700ms;
+    }
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}

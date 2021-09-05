@@ -1,0 +1,71 @@
+@import "../../globalStyles/mixins";
+@import "../../globalStyles/variables";
+
+.menu {
+  width: 100vw;
+  height: fit-content;
+  background-color: $opaqueGrey;
+  position: fixed;
+  top: -100vh;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+  padding: 2%;
+
+  &.active {
+    right: 0;
+    top: 0;
+  }
+
+  ul {
+    background-color: $darkGrey;
+    margin-top: 3rem;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    font-size: 3.8rem;
+    font-weight: 300;
+    color: white;
+
+    a {
+      font-size: inherit;
+      color: inherit;
+      text-decoration: none;
+
+      li {
+        @include flexBox(center, center);
+        margin: 2rem 0;
+        text-align: center;
+
+        span {
+          margin: 0 0 0 2%;
+          font-size: 2rem;
+          color: $accentColor;
+        }
+      }
+    }
+
+    .shop-menu {
+      overflow: hidden;
+
+      .dropdown {
+        opacity: 0;
+        max-height: 0;
+        transition: all 1s ease;
+
+        li {
+          font-size: 3rem;
+          margin: 1% auto;
+        }
+        &.active {
+          max-height: 500px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

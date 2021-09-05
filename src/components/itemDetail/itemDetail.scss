@@ -1,0 +1,184 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.item-detail {
+  width: 100%;
+  display: flex;
+  color: $lightGrey;
+  @include mobile {
+    flex-direction: column;
+  }
+  .left {
+    flex: 0.5;
+    position: relative;
+    .fade {
+      background-color: rgb(240, 241, 245);
+      position: absolute;
+      width: 100%;
+      height: 99%;
+      opacity: 0;
+
+      &.active {
+        animation: crossfade 300ms linear;
+      }
+    }
+    img {
+      width: 100%;
+      transition: all 1s ease;
+    }
+  }
+  .right {
+    flex: 0.5;
+    @include flexBox(center, center);
+
+    .item-content {
+      width: 80%;
+      height: 80%;
+
+      h3 {
+        font-size: 1.8rem;
+
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      & > * {
+        margin: 15px 0;
+      }
+
+      .sizes {
+        display: flex;
+
+        .size-wrapper {
+          margin-right: 8px;
+        }
+      }
+
+      button {
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        position: relative;
+        overflow: hidden;
+
+        &.size-btn {
+          text-transform: capitalize;
+          padding: 0.5rem 1rem;
+          color: $lightGrey;
+          background-color: white;
+          border: 0.5px solid $lightGrey;
+
+          &:hover,
+          &.active {
+            background-color: $lightGrey;
+            color: white;
+          }
+
+          &:disabled {
+            background-color: white;
+            color: $lightGrey;
+            cursor: default;
+            background: linear-gradient(
+              to bottom right,
+              white,
+              white 48%,
+              $lightGrey 50%,
+              $lightGrey 51%,
+              white 52%,
+              white
+            );
+          }
+        }
+
+        &.add-to-cart-btn {
+          width: 100%;
+          padding: 1rem;
+          color: white;
+          background-color: $accentColor;
+          transition: all 0.5s;
+          position: relative;
+          box-sizing: border-box;
+
+          &::after {
+            content: "»";
+            opacity: 0;
+            position: absolute;
+            top: 30%;
+            left: 0;
+            transition: 0.5s;
+          }
+
+          &:hover {
+            background-color: $lightGrey;
+            padding-left: 2rem;
+            padding-right: 1rem;
+          }
+
+          &:hover:after {
+            opacity: 1;
+            left: 43%;
+          }
+        }
+      }
+    }
+
+    .colors {
+      display: flex;
+
+      .color-wrapper {
+        margin: 5px;
+        padding-bottom: 5px;
+        &:hover {
+          padding-bottom: 3px;
+          border-bottom: 2px solid $accentColor;
+        }
+        &.active {
+          height: 24px;
+          padding: 2px;
+          @include boxShadow(0 0 1px 1px rgba(0, 0, 0, 0.2));
+          span {
+            box-shadow: none;
+          }
+          &:hover {
+            border-bottom: none;
+          }
+        }
+
+        span {
+          display: inline-block;
+          min-height: 20px;
+          min-width: 20px;
+          @include boxShadow(0 2px 3px 0px rgba(0, 0, 0, 0.1));
+
+          &.black {
+            background-color: black;
+          }
+
+          &.green {
+            background-color: rgb(71, 104, 71);
+          }
+
+          &.white {
+            background-color: whitesmoke;
+          }
+
+          &.blue {
+            background-color: rgb(17, 74, 138);
+          }
+
+          &.yellow {
+            background-color: rgb(255, 230, 0);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.about {
+  box-sizing: border-box;
+  width: 70%;
+  height: 100%;
+  margin: 60px auto;
+  @include flexBox(space-between, flex-start);
+  @include mobile {
+    @include flexBox(center, center);
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .about-content {
+    width: 45%;
+    @include mobile {
+      width: 80%;
+      height: 100%;
+      margin: 5em;
+      @include flexBox(flex-start, center);
+      flex-direction: column;
+    }
+    h2 {
+      color: $accentColor;
+      font-size: 2rem;
+      letter-spacing: 0.2rem;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 200;
+      color: $darkGrey;
+      margin: 5% 0;
+    }
+  }
+
+  .img-wrapper {
+    width: 40%;
+    @include mobile {
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      @include flexBox(center, center);
+    }
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}

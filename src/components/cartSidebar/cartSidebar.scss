@@ -1,0 +1,142 @@
+@import "../../globalStyles/variables";
+@import "../../globalStyles/mixins";
+
+.cartSidebar {
+  @include mobile {
+    display: none;
+  }
+  box-sizing: border-box;
+  @include flexBox(flex-start, center);
+  flex-direction: column;
+  width: 300px;
+  height: 100vh;
+  background-color: $opaqueGrey;
+  padding: 20px;
+  position: fixed;
+  top: 67px;
+  right: -300px;
+  z-index: 2;
+  transition: right 1s ease;
+
+  &.active {
+    right: 0;
+  }
+
+  .close-wrapper {
+    width: 100%;
+    @include flexBox(flex-end, center);
+
+    span {
+      color: $accentColor;
+      font-weight: 400;
+      font-size: 1.2rem;
+      transition: all 300ms ease;
+
+      &:hover {
+        cursor: pointer;
+        color: white;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .items {
+    max-height: 60%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background: $darkGrey;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $accentColor;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .item {
+      box-sizing: border-box;
+      width: 100%;
+      background-color: lighten($darkGrey, 4%);
+      @include flexBox(flex-start, center);
+      padding: 20px;
+      border-bottom: 1px solid white;
+
+      a {
+        text-decoration: none;
+      }
+
+      .info {
+        height: 100%;
+        padding: 10px;
+        flex-direction: column;
+        p {
+          margin-bottom: 5px;
+          color: white;
+          font-weight: 300;
+          text-transform: capitalize;
+          font-size: 1rem;
+        }
+      }
+
+      img {
+        max-width: 80px;
+      }
+    }
+  }
+
+  .total-wrapper {
+    margin-top: 30px;
+    width: 100%;
+    height: 27vh;
+    @include flexBox(center, center);
+    flex-direction: column;
+    padding: 20px;
+    border-top: 1px solid $accentColor;
+    border-bottom: 1px solid $accentColor;
+
+    h4 {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+    a {
+      margin: 20px 0;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      background-color: $accentColor;
+      padding: 10px;
+      font-weight: 400;
+      font-size: 1rem;
+
+      transition: all 0.5s;
+      position: relative;
+      box-sizing: border-box;
+
+      &::after {
+        content: "»";
+        opacity: 0;
+        position: absolute;
+        top: 25%;
+        left: 0;
+        transition: 0.5s;
+      }
+
+      &:hover {
+        background-color: $lightGrey;
+        padding-left: 2rem;
+        padding-right: 1rem;
+      }
+
+      &:hover:after {
+        opacity: 1;
+        left: 30%;
+      }
+    }
+  }
+}
