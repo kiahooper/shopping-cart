@@ -15,7 +15,7 @@ export const About = () => {
             Quibusdam consequatur quia quo, incidunt, ipsa reprehenderit, accusantium at facere quae quos possimus a ab labore? Rerum molestias culpa ut aspernatur eligendi.</p>
     </div>
     <div className="img-wrapper">
-        <img src="assets/images/about.jpg"></img>
+    <img src={`${process.env.PUBLIC_URL}/assets/images/about.jpg`} alt="man in rain"></img>
     </div>
 </div>
     )

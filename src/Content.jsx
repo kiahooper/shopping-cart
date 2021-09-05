@@ -1,5 +1,5 @@
 import {Navbar} from './components/navbar/Navbar';
-import {Index} from './components/index/Index';
+import {Home} from './components/home/Home';
 import {About} from './components/about/About';
 import {Cart} from './components/cart/Cart';
 import {Shop} from './components/shop/Shop';
@@ -23,7 +23,7 @@ export default function Content() {
           <TransitionGroup>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch location={location}>
-              <Route path="/" exact component={Index}/>
+              <Route path="/" exact component={Home}/>
               <Route path="/about" component={About}/>
               <Route path="/shop/categories/:category?" render={(props) => <Shop {...props}/>}/>
               <Route path="/shop/:id" render={(props) => <ItemDetail {...props}/>}/>

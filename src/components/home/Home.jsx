@@ -1,12 +1,12 @@
 import { React} from 'react';
 import { Link } from 'react-router-dom';
-import './index.scss';
+import './home.scss';
 
-export const Index = () => {
+export const Home = () => {
     return (
         <div className="index">
             <div className="img-wrapper">
-                <img src={`${process.env.PUBLIC_URL}/assets/images/heroIndex.jpg`}></img>
+                <img src={`${process.env.PUBLIC_URL}/assets/images/heroIndex.jpg`} alt="woman in rain"></img>
             </div>
             <div className="index-info">
                 <h2>Get Prepared</h2>
