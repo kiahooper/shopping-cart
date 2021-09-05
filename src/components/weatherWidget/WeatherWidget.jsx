@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { api_key } from './api';
 import './weatherWidget.scss';
 
 export const WeatherWidget = () => {
@@ -7,8 +8,6 @@ export const WeatherWidget = () => {
     const [loading, setLoading] = useState(true);
     const [icon, setIcon] = useState("");
     const [temp, setTemp] = useState(0);
-
-    const weather_api_key = "94e5076157191dd71ca334e00da37a2b";
 
     useEffect(() => {
         getWeather()
@@ -18,7 +17,7 @@ export const WeatherWidget = () => {
         try {
           const location = await getLocation();
           const response = await fetch(
-              `https://api.openweathermap.org/data/2.5/weather?${location}&APPID=${weather_api_key}&units=metric`,
+              `https://api.openweathermap.org/data/2.5/weather?${location}&APPID=${api_key}&units=metric`,
               { mode: "cors" }
           );
           const responseData = await response.json();
