@@ -14,6 +14,7 @@ I implemented a weather widget, that suited the theme of the rainwear shop. This
 
 ## How To View
 To open link below in new tab, please CTRL+click (on Windows and Linux) or CMD+click (on MacOS).
+
 [Visit The Website](https://kiahooper.github.io/shopping-cart/)
 
 ## Features
