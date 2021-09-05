@@ -11,7 +11,7 @@ export const Home = () => {
             <div className="index-info">
                 <h2>Get Prepared</h2>
                 <h3>View our full range of weather wear</h3>
-                <Link to="shop/categories/"><span>Shop now</span></Link>
+                <Link to="/shopping-cart/shop/categories/"><span>Shop now</span></Link>
             </div>
         </div>
 

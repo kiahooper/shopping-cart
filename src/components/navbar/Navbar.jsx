@@ -26,7 +26,7 @@ export const Navbar = () => {
         <div>
             <nav>
         <div className="left">
-            <Link className="logo-link" to="/">
+            <Link className="logo-link" to="/shopping-cart/">
                 <div className="logo"><h3 className="logo1">All</h3><h3 className="logo2">Weather</h3></div>
             </Link>
             < WeatherWidget />
@@ -34,26 +34,26 @@ export const Navbar = () => {
         <div className="right">
             <div className="web-menu">
                 <ul className="nav-links">            
-                    <NavLink className="link" activeClassName="link-active" to="/about">
+                    <NavLink className="link" activeClassName="link-active" to="/shopping-cart/about">
                         <li>About</li>
                     </NavLink>
                     <div className="shopMenu">
-                    <NavLink className="link" activeClassName="link-active" to="/shop/categories/">
+                    <NavLink className="link" activeClassName="link-active" to="/shopping-cart/shop/categories/">
                         <li>Shop</li>
                     </NavLink>
                     <div className="dropDown">
-                        <NavLink className="drop-link"to="/shop/categories/mens">
+                        <NavLink className="drop-link"to="/shopping-cart/shop/categories/mens">
                             <li>Mens</li>
                         </NavLink>
-                        <NavLink className="drop-link" to="/shop/categories/womens">
+                        <NavLink className="drop-link" to="/shopping-cart/shop/categories/womens">
                             <li>Womens</li>
                         </NavLink>
-                        <NavLink className="drop-link" to="/shop/categories/accessories">
+                        <NavLink className="drop-link" to="/shopping-cart/shop/categories/accessories">
                             <li>Accessories</li>
                         </NavLink>
                     </div>
                     </div>
-                    <NavLink className="link" activeClassName="link-active" to="/cart">
+                    <NavLink className="link" activeClassName="link-active" to="/shopping-cart/cart">
                         <div className="cart-logo"><ShoppingCartIcon fontSize="large"/><span className="numbers">{cartQty}</span></div>
                     </NavLink>
                 </ul>

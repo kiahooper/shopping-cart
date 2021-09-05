@@ -23,11 +23,11 @@ export default function Content() {
           <TransitionGroup>
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch location={location}>
-              <Route path="/" exact component={Home}/>
-              <Route path="/about" component={About}/>
-              <Route path="/shop/categories/:category?" render={(props) => <Shop {...props}/>}/>
-              <Route path="/shop/:id" render={(props) => <ItemDetail {...props}/>}/>
-              <Route path="/cart" component={Cart}/>
+              <Route path="/shopping-cart/" exact component={Home}/>
+              <Route path="/shopping-cart/about" component={About}/>
+              <Route path="/shopping-cart/shop/categories/:category?" render={(props) => <Shop {...props}/>}/>
+              <Route path="/shopping-cart/shop/:id" render={(props) => <ItemDetail {...props}/>}/>
+              <Route path="/shopping-cart/cart" component={Cart}/>
             </Switch>
             </CSSTransition>
             </TransitionGroup>

@@ -57,7 +57,7 @@ const Cart = () => {
         return (
             <div className="table-4cols">
               <div className="table-cell item">
-                <Link  to={`/shop/${item.product.id}`}>
+                <Link  to={`/shopping-cart/shop/${item.product.id}`}>
                 <img src={item.product.colors[item.color].src} alt={item.product.name}/>
                 <p>{item.product.name} -</p>
                 <p>{item.color} /</p>
@@ -83,7 +83,7 @@ const Cart = () => {
       :
       <div className="empty-cart">
         <h3>Your shopping cart is currently empty.</h3> 
-        <Link to="/shop/categories/" className="cart-link">Continue shopping <span>&rarr;</span></Link>
+        <Link to="/shopping-cart/shop/categories/" className="cart-link">Continue shopping <span>&rarr;</span></Link>
       </div> 
     }
     </div>

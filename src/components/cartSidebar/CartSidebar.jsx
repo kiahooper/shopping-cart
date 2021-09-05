@@ -45,7 +45,7 @@ export const CartSidebar = (props) => {
                 {cart.map(item => {
                     return (
                     <div className="item">
-                        <Link  to={`/shop/${item.product.id}`}>
+                        <Link  to={`/shopping-cart/shop/${item.product.id}`}>
                         <div className="img-wrapper">
                             <img src={item.product.colors[item.color].src} alt={item.product.name}/>
                         </div>
@@ -62,7 +62,7 @@ export const CartSidebar = (props) => {
             </div>
             <div className="total-wrapper">
                 <h4 className="numbers">Your total is ${total}</h4>
-                <Link to="/cart/">View Cart</Link>
+                <Link to="/shopping-cart/cart/">View Cart</Link>
 
             </div>
         </div>

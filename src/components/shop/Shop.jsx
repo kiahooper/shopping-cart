@@ -58,7 +58,7 @@ export const Shop = (props) => {
                 if (selectedCategory === "" || selectedCategory === undefined || item.category === selectedCategory) {
                     return (
                         <div key={item.id} className="item" onMouseEnter={()=>setSelectedItem(item.id)} onMouseLeave={()=>setSelectedColor("black")}>
-                            <Link  to={`/shop/${item.id}`}>
+                            <Link  to={`/shopping-cart/shop/${item.id}`}>
                                 <div className="img-wrapper">
                                 <div className={imgSrcChange === selectedColor && selectedItem === item.id ? "fade active" : "fade"}></div>
                                     <img src={getImgSource(item)} alt={item.name}/>
