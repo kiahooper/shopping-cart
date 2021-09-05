@@ -21,7 +21,7 @@ I implemented a weather widget, that suited the theme of the rainwear shop. This
 - Interesting UX due to animations and transitions
 - Easy implementation of backend database
 
-## Tech used
+## Tech
 
 - React
   - React Router
