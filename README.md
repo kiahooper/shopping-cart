@@ -10,7 +10,7 @@ It is currently only a front-end app, but has been built with the intentions of 
 Styling has been done using Sass, with a display of and animations both pure CSS and triggered by JSX/React.
 It is made fully mobile responsive using Flexbox.
 
-I implemented a weather widget, that suited the theme of the rainwear shop. This was a way to show the reusability of my previously built Weather App.
+I implemented a weather widget, that suited the theme of the rainwear shop. This was a way to show the reusability of my previously built Weather App, and displaying my understanding of working with asynchronous operations in the call stack.
 
 ## How To View
 To open link below in new tab, please CTRL+click (on Windows and Linux) or CMD+click (on MacOS).
