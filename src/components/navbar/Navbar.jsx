@@ -68,7 +68,7 @@ export const Navbar = () => {
         </div>
     </nav>
     < MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        </div>
+</div>
     
     )
 }

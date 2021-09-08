@@ -6,7 +6,7 @@
   height: fit-content;
   background-color: $opaqueGrey;
   position: fixed;
-  top: -100vh;
+  top: -120vh;
   right: 0;
   z-index: 2;
   display: flex;
@@ -27,7 +27,7 @@
     padding: 0;
     width: 100%;
     list-style: none;
-    font-size: 3.8rem;
+    font-size: 2.5rem;
     font-weight: 300;
     color: white;
 
@@ -38,12 +38,12 @@
 
       li {
         @include flexBox(center, center);
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         text-align: center;
 
         span {
           margin: 0 0 0 2%;
-          font-size: 2rem;
+          font-size: 1.5rem;
           color: $accentColor;
         }
       }
@@ -58,7 +58,7 @@
         transition: all 1s ease;
 
         li {
-          font-size: 3rem;
+          font-size: 2rem;
           margin: 1% auto;
         }
         &.active {

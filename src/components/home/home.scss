@@ -20,8 +20,8 @@
   }
 
   .index-info {
-    height: 30%;
-    margin: 5%;
+    height: 35%;
+    margin: 0 5%;
     @include flexBox(space-around, center);
     flex-direction: column;
     position: absolute;
