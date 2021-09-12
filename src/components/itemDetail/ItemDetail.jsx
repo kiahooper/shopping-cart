@@ -40,7 +40,7 @@ export const ItemDetail = (props) => {
         const cartItem = cartCopy.find(item => parseInt(item.product.id) === id && item.size === selectedSize && item.color === selectedColor);
         const index = cartCopy.findIndex(item => parseInt(item.product.id) === id && item.size === selectedSize && item.color === selectedColor);
 
-        if (checkStock(item, selectedSize, selectedColor)) {
+        if (checkStock(item, selectedSize, selectedColor) === true) {
             if (cartItem !== undefined) {
                 cartItem.quantity = cartItem.quantity + 1;
                 cartCopy[index] = cartItem;
@@ -60,7 +60,7 @@ export const ItemDetail = (props) => {
     }
 
     const checkStock = (item, size, color) => {
-        return (item.colors[color].stock[size]) > 0 ? true : false;
+        return (item.colors[color].stock[(Object.keys(item.colors[color].stock)[size])]) > 0;
     }
 
     return (
@@ -88,7 +88,7 @@ export const ItemDetail = (props) => {
                     Object.keys(item.colors[selectedColor].stock).map((size, index) => {
                         return (
                             <div className="size-wrapper">
-                                <button className={selectedSize === index ? "size-btn active" : "size-btn"} id={index} onClick={()=>setSelectedSize(index)} disabled={!(checkStock(item, size, selectedColor))}>{size}</button>
+                                <button className={selectedSize === index ? "size-btn active" : "size-btn"} id={index} onClick={()=>setSelectedSize(index)} disabled={!(checkStock(item, index, selectedColor))}>{size}</button>
                             </div>
                         )    
                     }
