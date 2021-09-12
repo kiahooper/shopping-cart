@@ -11,6 +11,7 @@ export const ItemDetail = (props) => {
     const [selectedSize, setSelectedSize] = useState(0);
     const [showCartSidebar, setShowCartSidebar] = useState(true);
     const [imgSrcChange, setImgSrcChange] = useState("");
+    const [outOfStock, setOutOfStock] = useState(false);
 
     const {match} = props;
     const id = parseInt(match.params.id);
@@ -25,27 +26,41 @@ export const ItemDetail = (props) => {
             await setImgSrcChange("");
         }
         handleSrcChange()
-    }, [selectedColor])
+    }, [selectedColor]);
 
+
+    useEffect(() => {
+        setOutOfStock(false);
+    }, [selectedColor, selectedSize]);
 
     const addToCart = () => {
+        
+        // Check if item is already in cart
         const cartCopy = [...cart];
         const cartItem = cartCopy.find(item => parseInt(item.product.id) === id && item.size === selectedSize && item.color === selectedColor);
         const index = cartCopy.findIndex(item => parseInt(item.product.id) === id && item.size === selectedSize && item.color === selectedColor);
-        
-        if (cartItem !== undefined) {
-            cartItem.quantity = cartItem.quantity + 1;
-            cartCopy[index] = cartItem;
-            setCart(cartCopy);
+
+        if (checkStock(item, selectedSize, selectedColor)) {
+            if (cartItem !== undefined) {
+                cartItem.quantity = cartItem.quantity + 1;
+                cartCopy[index] = cartItem;
+                setCart(cartCopy);
+            } else {
+                cartCopy.push({
+                    product: item,
+                    size: selectedSize,
+                    color: selectedColor,
+                    quantity: 1,
+                });
+                setCart(cartCopy);
+            }
         } else {
-            cartCopy.push({
-                product: item,
-                size: selectedSize,
-                color: selectedColor,
-                quantity: 1,
-            });
-            setCart(cartCopy);
+            setOutOfStock(true);
         }
+    }
+
+    const checkStock = (item, size, color) => {
+        return (item.colors[color].stock[size]) > 0 ? true : false;
     }
 
     return (
@@ -71,15 +86,15 @@ export const ItemDetail = (props) => {
                 <div className="sizes">
                     {
                     Object.keys(item.colors[selectedColor].stock).map((size, index) => {
-                        let stock = (item.colors[selectedColor].stock[size]) > 0 ? true : false;
                         return (
                             <div className="size-wrapper">
-                                <button className={selectedSize === index ? "size-btn active" : "size-btn"} id={index} onClick={()=>setSelectedSize(index)} disabled={!stock}>{size}</button>
+                                <button className={selectedSize === index ? "size-btn active" : "size-btn"} id={index} onClick={()=>setSelectedSize(index)} disabled={!(checkStock(item, size, selectedColor))}>{size}</button>
                             </div>
                         )    
                     }
                     )}
                 </div>
+                {outOfStock ? <div className="stock-out">Please select a color and size in stock.</div> : ""}
                 <button type="button" className="add-to-cart-btn" onClick={addToCart}>Add To Cart</button>
                 <p>{item.info}</p>
             </div>

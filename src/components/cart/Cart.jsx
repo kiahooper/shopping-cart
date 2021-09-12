@@ -59,9 +59,11 @@ const Cart = () => {
               <div className="table-cell item">
                 <Link  to={`/shopping-cart/shop/${item.product.id}`}>
                 <img src={item.product.colors[item.color].src} alt={item.product.name}/>
-                <p>{item.product.name} -</p>
-                <p>{item.color} /</p>
-                <p>{Object.keys(item.product.colors[item.color].stock)[item.size]}</p>
+                <div className="item-info">
+                  <p>{item.product.name} -</p>
+                  <p>{item.color} /</p>
+                  <p>{Object.keys(item.product.colors[item.color].stock)[item.size]}</p>
+                </div>
                 </Link>
               </div>
               <div className="table-cell">

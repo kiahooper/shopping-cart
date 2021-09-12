@@ -89,7 +89,7 @@ const shopItems = [
         },
         {
             id: 4,
-            name: 'Short Hooded Coat',
+            name: 'Hooded Coat',
             colors: {
                 "black": {
                     src: `${process.env.PUBLIC_URL}/assets/images/shopItems/mens_3_black.jpg`,

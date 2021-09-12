@@ -8,6 +8,7 @@
   background-color: whitesmoke;
   @include flexBox(space-between, center);
   padding: 0 20px;
+  margin-top: auto;
 
   a {
     width: max-content;
