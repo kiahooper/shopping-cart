@@ -4,9 +4,7 @@
 nav {
   box-sizing: border-box;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexBox(space-between, center);
   padding: 0 1em;
   position: -webkit-sticky;
   position: sticky;
